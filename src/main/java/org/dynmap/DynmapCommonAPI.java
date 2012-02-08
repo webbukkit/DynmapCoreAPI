@@ -71,7 +71,7 @@ public interface DynmapCommonAPI {
      */
     public boolean getPauseUpdateRenders();
     /**
-     * Set player visibility
+     * Set player visibility (configuration - persistent)
      * @param player - player ID
      * @param is_visible - true if visible, false if hidden
      */
@@ -83,6 +83,13 @@ public interface DynmapCommonAPI {
      * @return true if visible, false if not
      */
     public boolean getPlayerVisbility(String player);
+    /**
+     * Set player visibility (transient - player is invisible if configured to be invisible OR any plugins assert they are invisible)
+     * @param player - player ID
+     * @param is_visible - true if visible, false if hidden
+     * @param plugin_id - ID of asserting plugin
+     */
+    public void assertPlayerInvisibility(String player, boolean is_invisible, String plugin_id);
     /**
      * Post message from player to web
      * @param playerid - player ID
