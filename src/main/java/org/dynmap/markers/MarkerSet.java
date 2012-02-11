@@ -162,4 +162,14 @@ public interface MarkerSet {
      * @param minzoom - min zoom to display layer (0 = top, default)
      */
     public void setMinZoom(int maxzoom);
+    /**
+     * Set show/hide label for markers in set
+     * @param show - if true, show labels; if false, hide (show on hover); if null, use global default
+     */
+    public void setLabelShow(Boolean show);
+    /**
+     * Get show/hide label for markers
+     * @returns true, show labels; false, hide (show on hover); null, use global default
+     */
+    public Boolean getLabelShow();
 }
