@@ -21,6 +21,11 @@ public interface MarkerSet {
      */
     public Set<AreaMarker> getAreaMarkers();
     /**
+     * Get set of all poly-line markers currently in the set
+     * @return set of poly-line markers (set is copy - safe to iterate)
+     */
+    public Set<PolyLineMarker> getPolyLineMarkers();
+    /**
      * Create a new marker in the marker set
      * 
      * @param id - ID of the marker - must be unique within the set: if null, unique ID is generated
@@ -84,6 +89,32 @@ public interface MarkerSet {
      * @return marker, or null if none found
      */
     public AreaMarker   findAreaMarkerByLabel(String lbl);
+    
+    /** 
+     * Create poly-line marker
+     * @param id - marker ID
+     * @param lbl - label
+     * @param markup - if true, label is HTML markup
+     * @param world - world id
+     * @param x - x coord list
+     * @param y - y coord list
+     * @param z - z coord list
+     * @param persistent - true if persistent
+     */
+    public PolyLineMarker createPolyLineMarker(String id, String lbl, boolean markup, String world, double x[], double[] y, double z[], boolean persistent);
+    /**
+     * Get poly-line marker by ID
+     * @param id - ID of the poly-line marker
+     * @return marker, or null if cannot be found
+     */
+    public PolyLineMarker   findPolyLineMarker(String id);
+    /**
+     * Find poly-line marker by label - best matching substring
+     * @param lbl - label to find (same = best match)
+     * @return marker, or null if none found
+     */
+    public PolyLineMarker   findPolyLineMarkerByLabel(String lbl);
+
     /**
      * Get ID of marker set - unique among marker sets
      * @return ID
