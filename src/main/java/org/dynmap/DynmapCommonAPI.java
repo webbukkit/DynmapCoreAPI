@@ -84,12 +84,19 @@ public interface DynmapCommonAPI {
      */
     public boolean getPlayerVisbility(String player);
     /**
-     * Set player visibility (transient - player is invisible if configured to be invisible OR any plugins assert they are invisible)
+     * Set player visibility (transient - if player is configured to be visible, they are hidden if one or more plugins assert their invisiblity)
      * @param player - player ID
-     * @param is_visible - true if visible, false if hidden
+     * @param is_invisible - true if asserting player should be invisible, false if no assertion
      * @param plugin_id - ID of asserting plugin
      */
     public void assertPlayerInvisibility(String player, boolean is_invisible, String plugin_id);
+    /**
+     * Set player visibility (transient - if player is configured to be hidden, they are made visibile if one or more plugins assert their visibility))
+     * @param player - player ID
+     * @param is_visible - true if asserting that hidden player should be visible, false if no assertion
+     * @param plugin_id - ID of asserting plugin
+     */
+    public void assertPlayerVisibility(String player, boolean is_visible, String plugin_id);
     /**
      * Post message from player to web
      * @param playerid - player ID
