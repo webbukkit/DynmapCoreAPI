@@ -116,4 +116,9 @@ public interface DynmapCommonAPI {
      * @return version - format is "major.minor-build" or "major.minor.patch-build"
      */
     public String getDynmapCoreVersion();
+    /**
+     * Disable chat message processing (used by mods that will handle sending chat to the web themselves, via sendBroadcastToWeb()
+     * @param disable - if true, suppress internal chat-to-web messages
+     */
+    public boolean setDisableChatToWebProcessing(boolean disable);
 }
