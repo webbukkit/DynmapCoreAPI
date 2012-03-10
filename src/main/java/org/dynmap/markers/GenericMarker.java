@@ -24,6 +24,11 @@ public interface GenericMarker {
      */
     public String getWorld();
     /**
+     * Get marker's world ID (normalized - used for directory and URL names in Dynmap - '/' replaced with '_')
+     * @return world id
+     */
+    public String getNormalizedWorld();
+    /**
      * Test if marker is persistent
      */
     public boolean isPersistentMarker();
