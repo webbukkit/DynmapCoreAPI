@@ -26,6 +26,11 @@ public interface MarkerSet {
      */
     public Set<PolyLineMarker> getPolyLineMarkers();
     /**
+     * Get set of all circle markers currently in the set
+     * @return set of circle markers (set is copy - safe to iterate)
+     */
+    public Set<CircleMarker> getCircleMarkers();
+    /**
      * Create a new marker in the marker set
      * 
      * @param id - ID of the marker - must be unique within the set: if null, unique ID is generated
@@ -114,6 +119,34 @@ public interface MarkerSet {
      * @return marker, or null if none found
      */
     public PolyLineMarker   findPolyLineMarkerByLabel(String lbl);
+
+    
+    /** 
+     * Create circle marker
+     * @param id - marker ID
+     * @param lbl - label
+     * @param markup - if true, label is HTML markup
+     * @param world - world id
+     * @param x - x of center
+     * @param y - y of center
+     * @param z - z of center
+     * @param xr - radius on x axis
+     * @param zr - radius on z axis
+     * @param persistent - true if persistent
+     */
+    public CircleMarker createCircleMarker(String id, String lbl, boolean markup, String world, double x, double y, double z, double xr, double zr, boolean persistent);
+    /**
+     * Get circle marker by ID
+     * @param id - ID of the circle marker
+     * @return marker, or null if cannot be found
+     */
+    public CircleMarker   findCircleMarker(String id);
+    /**
+     * Find area marker by label - best matching substring
+     * @param lbl - label to find (same = best match)
+     * @return marker, or null if none found
+     */
+    public CircleMarker   findCircleMarkerByLabel(String lbl);
 
     /**
      * Get ID of marker set - unique among marker sets
