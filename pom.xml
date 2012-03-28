@@ -32,4 +32,11 @@
   </build>
   <dependencies>
   </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>deploymentRepo</id>
+      <name>Internal Releases</name>
+      <url>http://webbukkit.org:8081/nexus/content/repositories/releases</url>
+    </repository>
+  </distributionManagement>
 </project>
