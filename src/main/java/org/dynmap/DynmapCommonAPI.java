@@ -121,4 +121,11 @@ public interface DynmapCommonAPI {
      * @param disable - if true, suppress internal chat-to-web messages
      */
     public boolean setDisableChatToWebProcessing(boolean disable);
+    /**
+     * Test if given player can see another player on the map (based on dynmap settings, player sets, etc).
+     * @param player - player attempting to observe
+     * @param player_to_see - player to be observed by 'player'
+     * @return true if can be seen on map, false if cannot be seen
+     */
+    public boolean testIfPlayerVisibleToPlayer(String player, String player_to_see);
 }

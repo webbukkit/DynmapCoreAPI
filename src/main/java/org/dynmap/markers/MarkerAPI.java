@@ -46,4 +46,23 @@ public interface MarkerAPI {
      * @return marker icon object, or null if failed
      */
     public MarkerIcon createMarkerIcon(String id, String label, InputStream marker_png);
+    /**
+     * Get set of player sets defined
+     */
+    public Set<PlayerSet> getPlayerSets();
+    /**
+     * Get player set by ID
+     * @param id - player set ID
+     * @return set, or null if not found
+     */
+    public PlayerSet getPlayerSet(String id);
+    /**
+     * Create a new player set
+     * @param id - ID of player set (must be unique among player sets - letters, numbers, periods, underscores only)
+     * @param symmetric - is symmetric acccess (players in set can see other players in set) if true
+     * @param players - players in the set (ID strings)
+     * @param persistent - if true, set is persistent
+     * @return player set, or null if failed
+     */
+    public PlayerSet createPlayerSet(String id, boolean symmetric, Set<String> players, boolean persistent);
 }
