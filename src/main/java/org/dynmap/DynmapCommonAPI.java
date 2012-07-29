@@ -128,4 +128,9 @@ public interface DynmapCommonAPI {
      * @return true if can be seen on map, false if cannot be seen
      */
     public boolean testIfPlayerVisibleToPlayer(String player, String player_to_see);
+    /**
+     * Test if player position/information is protected on map view
+     * @return true if protected, false if visible to guests and all players
+     */
+    public boolean testIfPlayerInfoProtected();
 }
