@@ -1,5 +1,7 @@
 package org.dynmap.renderer;
 
+import java.util.Map;
+
 /**
  * Abstract base class for custom renderers - used to allow creation of customized patch sets for blocks
  * 
@@ -20,10 +22,10 @@ public abstract class CustomRenderer {
      * @param rpf - render patch factory (used for allocating patches)
      * @param blkid - block type ID
      * @param blockdatamask - block data mask (bit N=1 if block data value N is to be handled by renderer)
-     * @param custparm - parameter string for custom renderer - renderer specific
+     * @param custparm - parameter strings for custom renderer - renderer specific
      * @return true if initialized successfully, false if not
      */
-    public boolean initializeRenderer(RenderPatchFactory rpf, int blkid, int blockdatamask, String custparm) {
+    public boolean initializeRenderer(RenderPatchFactory rpf, int blkid, int blockdatamask, Map<String,String> custparm) {
         return true;
     }
     /**
