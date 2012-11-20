@@ -1,6 +1,9 @@
 package org.dynmap.renderer;
 
+import java.util.List;
 import java.util.Map;
+
+import org.dynmap.renderer.RenderPatchFactory.SideVisible;
 
 /**
  * Abstract base class for custom renderers - used to allow creation of customized patch sets for blocks
@@ -63,4 +66,42 @@ public abstract class CustomRenderer {
      * @return patch list for given block
      */
     public abstract RenderPatch[] getRenderPatchList(MapDataContext mapDataCtx);
+
+    private static final int[] default_patches = { 0, 0, 0, 0, 0, 0 };
+    /**
+     *  Utility method: add simple box to give list
+     * @param rpf - patch factory
+     * @param list - list to add patches to
+     * @param xmin - minimum for X axis
+     * @param xmax - maximum for X axis
+     * @param ymin - minimum for Y axis
+     * @param ymax - maximum for Y axis
+     * @param zmin - minimum for Z axis
+     * @param zmax - maximum for Z axis
+     * @param patchids - patch IDs for each face (bottom,top,xmin,xmax,zmin,zmax)
+     */
+    protected void addBox(RenderPatchFactory rpf, List<RenderPatch> list, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, int[] patchids)  {
+        if(patchids == null) {
+            patchids = default_patches;
+        }
+        /* Add top */
+        if(patchids[1] >= 0)
+            list.add(rpf.getPatch(0, ymax, 1, 1, ymax, 1, 0, ymax, 0, xmin, xmax, 1-zmax, 1-zmin, SideVisible.TOP, patchids[1]));
+        /* Add bottom */
+        if(patchids[0] >= 0)
+            list.add(rpf.getPatch(0, ymin, 1, 1, ymin, 1, 0, ymin, 0, xmin, xmax, 1-zmax, 1-zmin, SideVisible.TOP, patchids[0]));
+        /* Add minX side */
+        if(patchids[2] >= 0)
+            list.add(rpf.getPatch(xmin, 0, 0, xmin, 0, 1, xmin, 1, 0, zmin, zmax, ymin, ymax, SideVisible.TOP, patchids[2]));
+        /* Add maxX side */
+        if(patchids[3] >= 0)
+            list.add(rpf.getPatch(xmax, 0, 1, xmax, 0, 0, xmax, 1, 1, 1-zmax, 1-zmin, ymin, ymax, SideVisible.TOP, patchids[3]));
+        /* Add minZ side */
+        if(patchids[4] >= 0)
+            list.add(rpf.getPatch(1, 0, zmin, 0, 0, zmin, 1, 1, zmin, 1-xmax, 1-xmin, ymin, ymax, SideVisible.TOP, patchids[4]));
+        /* Add maxZ side */
+        if(patchids[5] >= 0)
+            list.add(rpf.getPatch(0, 0, zmax, 1, 0, zmax, 0, 1, zmax, xmin, xmax, ymin, ymax, SideVisible.TOP, patchids[5]));
+    }
+
 }
