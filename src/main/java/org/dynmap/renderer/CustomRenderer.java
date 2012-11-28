@@ -84,12 +84,12 @@ public abstract class CustomRenderer {
         if(patchids == null) {
             patchids = default_patches;
         }
+        /* Add bottom */
+        if(patchids[0] >= 0)
+            list.add(rpf.getPatch(0, ymin, 0, 1, ymin, 0, 0, ymin, 1, xmin, xmax, zmin, zmax, SideVisible.TOP, patchids[0]));
         /* Add top */
         if(patchids[1] >= 0)
             list.add(rpf.getPatch(0, ymax, 1, 1, ymax, 1, 0, ymax, 0, xmin, xmax, 1-zmax, 1-zmin, SideVisible.TOP, patchids[1]));
-        /* Add bottom */
-        if(patchids[0] >= 0)
-            list.add(rpf.getPatch(0, ymin, 1, 1, ymin, 1, 0, ymin, 0, xmin, xmax, 1-zmax, 1-zmin, SideVisible.TOP, patchids[0]));
         /* Add minX side */
         if(patchids[2] >= 0)
             list.add(rpf.getPatch(xmin, 0, 0, xmin, 0, 1, xmin, 1, 0, zmin, zmax, ymin, ymax, SideVisible.TOP, patchids[2]));
