@@ -66,4 +66,16 @@ public interface RenderPatchFactory {
      * @return patch requested
      */
     public RenderPatch getRotatedPatch(RenderPatch patch, int xrot, int yrot, int zrot, int textureidx);
+    /**
+     * Get named patch with given attributes.  Name can encode rotation and patch index info
+     * "name" - simple name
+     * "name@rot" - name with rotation around Y
+     * "name@x/y/z" - name with rotation around x, then y, then z axis
+     * "name#patch" - name with explicit patch index
+     * 
+     * @param name - name of patch (must be defined in same config file as custom renderer): supports name@yrot, name@xrot/yrot/zrot
+     * @param textureidx - texture index to be used for patch, if not provided in name encoding (#patchid suffix)
+     * @return patch requested
+     */
+    public RenderPatch getNamedPatch(final String name, int textureidx);
 }
