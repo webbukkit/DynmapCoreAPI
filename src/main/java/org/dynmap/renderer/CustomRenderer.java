@@ -103,5 +103,68 @@ public abstract class CustomRenderer {
         if(patchids[5] >= 0)
             list.add(rpf.getPatch(0, 0, zmax, 1, 0, zmax, 0, 1, zmax, xmin, xmax, ymin, ymax, SideVisible.TOP, patchids[5]));
     }
-
+    /**
+     * Get patch corresponding to side N (per MC side index: 0=bottom (y-), 1=top (y+), 2=z-, 3=z+, 4=x-, 5=x+)
+     * @param rpf - patch factory
+     * @param side - side number
+     * @paran setback - amount face is set back from block edge (0=on side, 0.5=at middle)
+     * @param umin - texture horizontal minimum
+     * @param umax - texture horizontal maximum
+     * @param vmin - texture vertical minimum
+     * @param vmax - texture vertical maximum
+     * @param rot - rotation of texture (clockwise on given side)
+     * @param textureidx - texture index
+     */
+    public RenderPatch getSidePatch(RenderPatchFactory rpf, int side, double setback, double umin, double umax, double vmin, double vmax, int rot, int textureidx) {
+        RenderPatch rp = null;
+        switch(side) {
+            case 0:
+                rp = rpf.getPatch(0, setback, 0, 1, setback, 0, 0, setback, 1, umin, umax, vmin, vmax, SideVisible.TOP, textureidx);
+                if (rot != 0) {
+                    rp = rpf.getRotatedPatch(rp, 0, rot, 0, textureidx);
+                }
+                break;
+            case 1:
+                rp = rpf.getPatch(0, 1.0-setback, 1, 1, 1.0-setback, 1, 0, 1.0-setback, 0, umin, umax, 1-vmax, 1-vmin, SideVisible.TOP, textureidx);
+                if (rot != 0) {
+                    rp = rpf.getRotatedPatch(rp, 0, 360-rot, 0, textureidx);
+                }
+                break;
+            case 2:
+                rp = rpf.getPatch(1, 0, setback, 0, 0, setback, 1, 1, setback, 1-umax, 1-umin, vmin, vmax, SideVisible.TOP, textureidx);
+                if (rot != 0) {
+                    rp = rpf.getRotatedPatch(rp, 0, 0, rot, textureidx);
+                }
+                break;
+            case 3:
+                rp = rpf.getPatch(0, 0, 1.0-setback, 1, 0, 1.0-setback, 0, 1, 1.0-setback, umin, umax, vmin, vmax, SideVisible.TOP, textureidx);
+                if (rot != 0) {
+                    rp = rpf.getRotatedPatch(rp, 0, 0, 360-rot, textureidx);
+                }
+                break;
+            case 4:
+                rp = rpf.getPatch(setback, 0, 0, setback, 0, 1, setback, 1, 0, umin, umax, vmin, vmax, SideVisible.TOP, textureidx);
+                if (rot != 0) {
+                    rp = rpf.getRotatedPatch(rp, rot, 0, 0, textureidx);
+                }
+                break;
+            case 5:
+                rp = rpf.getPatch(1.0-setback, 0, 1, 1.0-setback, 0, 0, 1.0-setback, 1, 1, 1-umax, 1-umin, vmin, vmax, SideVisible.TOP, textureidx);
+                if (rot != 0) {
+                    rp = rpf.getRotatedPatch(rp, 360-rot, 0, 0, textureidx);
+                }
+                break;
+        }
+        return rp;
+    }
+    /**
+     * Get patch corresponding to side N (per MC side index: 0=bottom (y-), 1=top (y+), 2=z-, 3=z+, 4=x-, 5=x+)
+     * @param rpf - patch factory
+     * @param side - side number
+     * @param rot - rotation of texture (clockwise on given side)
+     * @param textureidx - texture index
+     */
+    public RenderPatch getSidePatch(RenderPatchFactory rpf, int side, int rot, int textureidx) {
+        return getSidePatch(rpf, side, 0.0, 0.0, 1.0, 0.0, 1.0, rot, textureidx);
+    }
 }
