@@ -38,7 +38,7 @@ public interface DynmapCommonAPI {
      * @param maxy - maximum y of volume
      * @param maxz - maximum z of volume
      * 
-     * @return number of tiles queued to be rerendered
+     * @return number of tiles queued to be rerendered (@deprecated return value - just returns 0)
      */
     public int triggerRenderOfVolume(String wid, int minx, int miny, int minz, int maxx, int maxy, int maxz);
     /**
@@ -49,7 +49,7 @@ public interface DynmapCommonAPI {
      * @param y - y coordinate of block
      * @param z - z coordinate of block
      * 
-     * @return number of tiles queued to be rerendered
+     * @return number of tiles queued to be rerendered (@deprecated return value - just returns 0)
      */
     public int triggerRenderOfBlock(String wid, int x, int y, int z);
     /*
