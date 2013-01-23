@@ -52,9 +52,20 @@ public abstract class CustomRenderer {
      * the teture mapping defined for the block definitions.
      * @return highest texture index that may be returned, plus 1.  Default is 1.
      */
-    public int getMaximumTextureCount() {
+    protected int getMaximumTextureCount() {
         return 1;
     }
+    /**
+     * Return the maximum number of texture indices that may be returned by the renderer.  Used to validate
+     * the teture mapping defined for the block definitions.
+     *
+     * @param rpf - render patch factory (used for allocating patches)
+     * @return highest texture index that may be returned, plus 1.  Default is 1.
+     */
+    public int getMaximumTextureCount(RenderPatchFactory rpf) {
+        return getMaximumTextureCount();
+    }
+
     /**
      * Return list of patches for block at given coordinates.  List will be treated as read-only, so the same list can
      * and should be returned, when possible, for different blocks with the same patch list.  The provided map data

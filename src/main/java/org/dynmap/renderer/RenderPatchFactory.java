@@ -78,4 +78,17 @@ public interface RenderPatchFactory {
      * @return patch requested
      */
     public RenderPatch getNamedPatch(final String name, int textureidx);
+    /**
+     * Get index of texture from texture map, using given key value
+     * @param id - texture map ID
+     * @param key - key of requested texture
+     * @returns index of texture, or -1 if not found
+     */
+    public int getTextureIndexFromMap(String id, int key);
+    /**
+     * Get number of textures defined in given texture map
+     * @param id - texture map ID
+     * @return number of textures, or -1 if map not found
+     */
+    public int getTextureCountFromMap(String id);
 }
