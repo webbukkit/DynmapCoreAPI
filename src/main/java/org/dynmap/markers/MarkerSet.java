@@ -236,4 +236,14 @@ public interface MarkerSet {
      * @returns true, show labels; false, hide (show on hover); null, use global default
      */
     public Boolean getLabelShow();
+    /**
+     * Set the default marker icon for markers added to this set
+     * @param defmark - default marker
+     */
+    public void setDefaultMarkerIcon(MarkerIcon defmark);
+    /**
+     * Get the default marker icon for the markers added to this set
+     * @returns default marker
+     */
+    public MarkerIcon getDefaultMarkerIcon();
 }

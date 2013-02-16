@@ -15,6 +15,11 @@ public interface GenericMarker {
      */
     public MarkerSet getMarkerSet();
     /**
+     * Set the marker set for the marker
+     * @return marker set
+     */
+    public void setMarkerSet(MarkerSet newset);
+    /**
      * Delete the marker
      */
     public void deleteMarker();
