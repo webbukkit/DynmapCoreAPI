@@ -6,7 +6,7 @@ import org.dynmap.markers.MarkerAPI;
  * This is the interface representing the published API for the Dynmap plugin, common for all Dynmap
  * implementations (not Bukkit specific).  
  */
-public interface DynmapCommonAPI {
+public interface DynmapCommonAPI {    
     /**
      * This method can return null if the 'markers' component has not been configured - 
      * a warning message will be issued to the server.log in this event.
