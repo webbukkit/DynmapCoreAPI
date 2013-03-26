@@ -3,12 +3,24 @@ package org.dynmap.permissions;
 import java.util.Set;
 
 
-public interface PermissionsHandler {
+public abstract class PermissionsHandler {
     /**
      * Location to install provider (used by DynmapCBBridge)
      */
-    public static PermissionsHandler handler = null;
+    private static PermissionsHandler handler = null;
     
+    /**
+     * Set handler (used by DynmapCBBridge)
+     */
+    public static void setHandler(PermissionsHandler ph) {
+        handler = ph;
+    }
+    /**
+     * Get handler
+     */
+    public static PermissionsHandler getHandler() {
+        return handler;
+    }
     /**
      * Test if given logged in user has given permissions
      * 
@@ -17,7 +29,7 @@ public interface PermissionsHandler {
      * @return true if has permission, false if not
      * 
      */
-    public boolean hasPermission(String username, String perm);
+    public abstract boolean hasPermission(String username, String perm);
     /**
      * Test if given (potentially offline) user has the given permissions
      * 
@@ -25,7 +37,7 @@ public interface PermissionsHandler {
      * @param perms - permissions to be tested
      * @return set of permissions granted to user
      */
-    public Set<String> hasOfflinePermissions(String username, Set<String> perms);
+    public abstract Set<String> hasOfflinePermissions(String username, Set<String> perms);
     /**
      * Test if given (potentially offline) user has the given permission
      * 
@@ -33,5 +45,5 @@ public interface PermissionsHandler {
      * @param perm - permission
      * @return true if has permission, false if not
      */
-    public boolean hasOfflinePermission(String player, String perm);
+    public abstract boolean hasOfflinePermission(String player, String perm);
 }
