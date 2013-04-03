@@ -22,6 +22,11 @@ public abstract class DynmapCommonAPIListener {
      */
     public void apiDisabled(DynmapCommonAPI api) {
     }
+    /**
+     * Called when API listener added before API ready (internal use)
+     */
+    public void apiListenerAdded() {
+    }
     
     private static DynmapCommonAPI dynmapapi = null;
     
@@ -35,6 +40,11 @@ public abstract class DynmapCommonAPIListener {
         listeners.add(listener);
         if(dynmapapi != null) {
             listener.apiEnabled(dynmapapi);
+        }
+        else {
+            for (DynmapCommonAPIListener l : listeners) {
+                l.apiListenerAdded();
+            }
         }
     }
     /**
