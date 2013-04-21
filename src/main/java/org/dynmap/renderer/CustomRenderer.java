@@ -91,7 +91,7 @@ public abstract class CustomRenderer {
      * @param zmax - maximum for Z axis
      * @param patchids - patch IDs for each face (bottom,top,xmin,xmax,zmin,zmax)
      */
-    protected void addBox(RenderPatchFactory rpf, List<RenderPatch> list, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, int[] patchids)  {
+    public static void addBox(RenderPatchFactory rpf, List<RenderPatch> list, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, int[] patchids)  {
         if(patchids == null) {
             patchids = default_patches;
         }
