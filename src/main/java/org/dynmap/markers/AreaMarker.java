@@ -120,4 +120,14 @@ public interface AreaMarker extends GenericMarker {
      * @return color (0xRRGGBB)
      */
     public int getFillColor();
+    /**
+     * Set resolution boost flag
+     * @param bflag - boost flag
+     */
+    public void setBoostFlag(boolean bflag);
+    /**
+     * Get resolution boost flag
+     * @return boost flag
+     */
+    public boolean getBoostFlag();
 }
