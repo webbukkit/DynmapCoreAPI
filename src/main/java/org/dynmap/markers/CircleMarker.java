@@ -3,7 +3,7 @@ package org.dynmap.markers;
 /**
  * This defines the public interface to a circle marker object, for use with the MarkerAPI
  */
-public interface CircleMarker extends GenericMarker {
+public interface CircleMarker extends GenericMarker, MarkerDescription {
     /**
      * Get the marker's label
      */
@@ -22,16 +22,6 @@ public interface CircleMarker extends GenericMarker {
      * Test if marker label is processed as HTML
      */
     public boolean isLabelMarkup();
-    /**
-     * Set marker description (HTML markup shown in popup when clicked)
-     * @param desc - HTML markup description
-     */
-    public void setDescription(String desc);
-    /**
-     * Get marker description
-     * @return descrption
-     */
-    public String getDescription();
     /**
      * Get center X coordinate
      * @return x coordinate

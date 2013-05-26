@@ -3,7 +3,7 @@ package org.dynmap.markers;
 /**
  * This defines the public interface to a marker object, for use with the MarkerAPI
  */
-public interface Marker extends GenericMarker {
+public interface Marker extends GenericMarker, MarkerDescription {
     /**
      * Get marker's X coordinate
      * @return x coordinate
@@ -56,14 +56,4 @@ public interface Marker extends GenericMarker {
      * Test if marker label is processed as HTML
      */
     public boolean isLabelMarkup();
-    /**
-     * Set marker description (HTML markup shown in popup when clicked)
-     * @param desc - HTML markup description
-     */
-    public void setDescription(String desc);
-    /**
-     * Get marker description
-     * @return descrption
-     */
-    public String getDescription();
 }
