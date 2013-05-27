@@ -1,6 +1,6 @@
 package org.dynmap.markers;
 
-public interface MarkerDescription {
+public interface MarkerDescription extends GenericMarker {
     /**
      * Set marker description (HTML markup shown in popup when clicked)
      * @param desc - HTML markup description

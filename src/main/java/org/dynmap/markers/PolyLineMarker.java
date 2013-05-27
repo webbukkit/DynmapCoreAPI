@@ -3,25 +3,7 @@ package org.dynmap.markers;
 /**
  * This defines the public interface to a poly-line marker object, for use with the MarkerAPI
  */
-public interface PolyLineMarker extends GenericMarker, MarkerDescription {
-    /**
-     * Get the marker's label
-     */
-    public String getLabel();
-    /**
-     * Update the marker's label (plain text)
-     */
-    public void setLabel(String lbl);
-    /**
-     * Update the marker's label and markup flag
-     * @param label - label string
-     * @param markup - if true, label is processed as HTML (innerHTML for <span> used for label); false implies plaintext
-     */
-    public void setLabel(String lbl, boolean markup);
-    /**
-     * Test if marker label is processed as HTML
-     */
-    public boolean isLabelMarkup();
+public interface PolyLineMarker extends MarkerDescription {
     /**
      * Get corner location count
      */
