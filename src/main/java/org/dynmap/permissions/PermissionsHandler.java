@@ -31,6 +31,15 @@ public abstract class PermissionsHandler {
      */
     public abstract boolean hasPermission(String username, String perm);
     /**
+     * Test if given logged in user has given permission node
+     * 
+     * @param username - user name
+     * @param perm - permission (relative ID - e.g. 'dynmap.fullrender' is 'fullrender')
+     * @return true if has permission, false if not
+     * 
+     */
+    public abstract boolean hasPermissionNode(String username, String perm);
+    /**
      * Test if given (potentially offline) user has the given permissions
      * 
      * @param username - user name
