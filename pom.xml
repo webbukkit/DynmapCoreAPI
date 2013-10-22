@@ -2,7 +2,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.dynmap</groupId>
   <artifactId>DynmapCoreAPI</artifactId>
-  <version>1.9</version>
   <build>
   	<plugins>
 			<plugin>
@@ -41,4 +40,5 @@
   </build>
   <dependencies>
   </dependencies>
+  <version>2.0</version>
 </project>
