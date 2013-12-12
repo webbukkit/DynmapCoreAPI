@@ -107,4 +107,12 @@ public interface ModTextureDefinition {
      * @return block texture record: use methods to set texture use on faces/patches
      */
     public BlockTextureRecord addBlockTextureRecord(int blockID);
+    /**
+     * Add block texture record, based on copying a record : default assumes all metadata values are matching
+     * @param blockID - block ID 
+     * @param srcBlockID - source block ID (definition copied from)
+     * @param srcMeta - source meta (definition copied from)
+     * @return block texture record: use methods to set texture use on faces/patches
+     */
+    public CopyBlockTextureRecord addCopyBlockTextureRecord(int blockID, int srcBlockID, int srcMeta);
 }

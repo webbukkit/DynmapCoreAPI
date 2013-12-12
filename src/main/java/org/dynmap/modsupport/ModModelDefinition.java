@@ -20,6 +20,50 @@ public interface ModModelDefinition {
      */
     public ModTextureDefinition getTextureDefinition();
     /**
+     * Add volumetric model : default assumes all metadata values are matching
+     * @param blockID - block ID 
+     * @param scale - grid scale (subblock array is scale x scale x scale) : from 1 to 16
+     * @return block model: use methods to set occupied subblocks
+     */
+    public VolumetricBlockModel addVolumetricModel(int blockid, int scale);
+    /**
+     * Add standard stair model : default assumes all metadata values are matching
+     * @param blockID - block ID 
+     * @return block model record
+     */
+    public StairBlockModel addStairModel(int blockid);
+    /**
+     * Add wall or fence model : default assumes all metadata values are matching
+     * @param blockID - block ID 
+     * @param type - type of wall or fence
+     * @return block model record
+     */
+    public WallFenceBlockModel addWallFenceModel(int blockid, WallFenceBlockModel.FenceType type);
+    /**
+     * Add cuboid model : default assumes all metadata values are matching
+     * @param blockID - block ID 
+     * @return block model record
+     */
+    public CuboidBlockModel addCuboidModel(int blockid);
+    /**
+     * Add pane model : default assumes all metadata values are matching
+     * @param blockID - block ID 
+     * @return block model record
+     */
+    public PaneBlockModel addPaneModel(int blockid);
+    /**
+     * Add standard plant model : default assumes all metadata values are matching
+     * @param blockID - block ID 
+     * @return block model record
+     */
+    public PlantBlockModel addPlantModel(int blockid);
+    /**
+     * Add standard box model : default assumes all metadata values are matching
+     * @param blockID - block ID 
+     * @return block model record
+     */
+    public BoxBlockModel addBoxModel(int blockid);
+    /**
      * Final call for model definition: publishes definiiton to Dynmap to be used for the mod
      * @return true if successful, false if error
      */
