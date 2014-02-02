@@ -55,4 +55,14 @@ public interface GenericMarker {
      * Test if marker label is processed as HTML
      */
     public boolean isLabelMarkup();
+    /**
+     * Get minimum zoom level for marker to be visible
+     * @return -1 if no minimum, >0 for level of zoom needed to show
+     */
+    public int getMinZoom();
+    /**
+     * Set minimum zoom level for marker to be visible
+     * @param zoom : -1 if no minimum, >0 for level of zoom needed to show
+     */
+    public void setMinZoom(int zoom);
 }
