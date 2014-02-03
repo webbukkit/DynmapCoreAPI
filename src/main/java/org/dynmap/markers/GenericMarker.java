@@ -56,13 +56,23 @@ public interface GenericMarker {
      */
     public boolean isLabelMarkup();
     /**
-     * Get minimum zoom level for marker to be visible
-     * @return -1 if no minimum, >0 for level of zoom needed to show
+     * Get minimum zoom level for marker to be visible (overrides minzoom for marker set, if any)
+     * @return -1 if no minimum, >0 = lowest level of zoom marker is shown
      */
     public int getMinZoom();
     /**
-     * Set minimum zoom level for marker to be visible
-     * @param zoom : -1 if no minimum, >0 for level of zoom needed to show
+     * Set minimum zoom level for marker to be visible (overrides minzoom for marker set, if any)
+     * @param zoom : -1 if no minimum, >0 = lowest level of zoom marker is shown
      */
     public void setMinZoom(int zoom);
+    /**
+     * Get maximum zoom level for marker to be visible (overrides maxzoom for marker set, if any)
+     * @return -1 if no maximum, >0 = highest level of zoom marker is shown
+     */
+    public int getMaxZoom();
+    /**
+     * Set maximum zoom level for marker to be visible (overrides maxzoom for marker set, if any)
+     * @param zoom : -1 if no maximum, >0 = highest level of zoom marker is shown
+     */
+    public void setMaxZoom(int zoom);
 }

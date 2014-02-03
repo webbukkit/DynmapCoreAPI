@@ -218,14 +218,24 @@ public interface MarkerSet {
     public int getLayerPriority();
     /**
      * Get min zoom-in for display of layer (hide when zoom is below this setting)
-     * @return minzoom (0 if top - always displayed)
+     * @return minzoom (-1 if no minimum)
      */
     public int getMinZoom();
     /**
      * Set min zoom-in for display of layer
-     * @param minzoom - min zoom to display layer (0 = top, default)
+     * @param minzoom - min zoom to display layer (-1 = no minimum)
      */
-    public void setMinZoom(int maxzoom);
+    public void setMinZoom(int minzoom);
+    /**
+     * Get max zoom-in for display of layer (hide when zoom is above this setting)
+     * @return maxzoom (-1 if no max)
+     */
+    public int getMaxZoom();
+    /**
+     * Set max zoom-in for display of layer
+     * @param maxzoom - max zoom to display layer (-1 = no maximum)
+     */
+    public void setMaxZoom(int maxzoom);
     /**
      * Set show/hide label for markers in set
      * @param show - if true, show labels; if false, hide (show on hover); if null, use global default
