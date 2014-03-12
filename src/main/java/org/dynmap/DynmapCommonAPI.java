@@ -133,4 +133,15 @@ public interface DynmapCommonAPI {
      * @return true if protected, false if visible to guests and all players
      */
     public boolean testIfPlayerInfoProtected();
+    /**
+     * Process sign change
+     * @param blkid - block ID
+     * @param world - world name
+     * @param x - x coord
+     * @param y - y coord
+     * @param z - z coord
+     * @param lines - sign lines (input and output)
+     * @param playerid - player ID
+     */
+    public void processSignChange(int blkid, String world, int x, int y, int z, String[] lines, String playerid);
 }
