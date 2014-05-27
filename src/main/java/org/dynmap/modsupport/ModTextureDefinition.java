@@ -27,7 +27,7 @@ public interface ModTextureDefinition {
     public boolean publishDefinition();
     
     /**
-     * Set texture path for texture resources (base path for resource loads from mod - for 1.6.x, default is assets/<modid>/textures/blocks)
+     * Set texture path for texture resources (base path for resource loads from mod - for 1.6.x, default is assets/&lt;modid&gt;/textures/blocks)
      * @param txtpath - texture resource base path
      */
     public void setTexturePath(String txtpath);
@@ -85,7 +85,7 @@ public interface ModTextureDefinition {
      * @param id - texture ID
      * @param filename - texture file name (including .png)
      * @param xcount - horizontal patch count in texture file
-     * @param ycound - vertical patch count in texture file
+     * @param ycount - vertical patch count in texture file
      * @return TextureFile associated with resource
      */
     public GridTextureFile registerGridTextureFile(String id, String filename, int xcount, int ycount);
@@ -96,7 +96,7 @@ public interface ModTextureDefinition {
      * @param id - texture ID
      * @param filename - texture file name (including .png)
      * @param xcount - horizontal patch count in texture file
-     * @param ycound - vertical patch count in texture file
+     * @param ycount - vertical patch count in texture file
      * @return CustomTextureFile associated with resource: use methods on this to define the custom patches within the file
      */
     public CustomTextureFile registerCustomTextureFile(String id, String filename, int xcount, int ycount);

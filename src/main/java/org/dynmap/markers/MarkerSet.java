@@ -243,7 +243,7 @@ public interface MarkerSet {
     public void setLabelShow(Boolean show);
     /**
      * Get show/hide label for markers
-     * @returns true, show labels; false, hide (show on hover); null, use global default
+     * @return true, show labels; false, hide (show on hover); null, use global default
      */
     public Boolean getLabelShow();
     /**
@@ -253,7 +253,7 @@ public interface MarkerSet {
     public void setDefaultMarkerIcon(MarkerIcon defmark);
     /**
      * Get the default marker icon for the markers added to this set
-     * @returns default marker
+     * @return default marker
      */
     public MarkerIcon getDefaultMarkerIcon();
 }

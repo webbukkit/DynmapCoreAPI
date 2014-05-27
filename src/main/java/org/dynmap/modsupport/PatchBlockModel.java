@@ -9,8 +9,8 @@ public interface PatchBlockModel extends BlockModel {
     /**
      * Add patch with given attributes.
      * 
-     * Definition is a 2D parallelogram surface, with origin <x0,y0,z0> within the block, and defined by two edge vectors -
-     * one with and end point of <xu,yu,zu>, and a second with an end point of <xv,yv,zv>.  The patch is
+     * Definition is a 2D parallelogram surface, with origin &lt;x0,y0,z0&gt; within the block, and defined by two edge vectors -
+     * one with and end point of &lt;xu,yu,zu&gt;, and a second with an end point of &lt;xv,yv,zv&gt;.  The patch is
      * defined within the unit vector range umin to umax (parallel to the U vecotr) and vmin to vmax
      * (parallel to the V vector).
      * The surface can be visible via one side (SideVisible.TOP, SideVisible.BOTTOM) or both sides (SideVisible.BOTH).
@@ -28,7 +28,7 @@ public interface PatchBlockModel extends BlockModel {
      * @param umax - upper bound for visibility along U vector (use 1.0 by default)
      * @param vmin - lower bound for visibility along V vector (use 0.0 by default)
      * @param vmax - upper bound for visibility along V vector (use 1.0 by default)
-     * @param uplusvmax - upper bound for visibility for U+V (use 100.0 by default: <=1.0 for triangle)
+     * @param uplusvmax - upper bound for visibility for U+V (use 100.0 by default: &lt;=1.0 for triangle)
      * @param sidevis - Controls which sides of the surface are visible (U cross V defines normal - TOP is from that side, BOTTOM is opposite side)
      * @return patch ID
      */
@@ -38,8 +38,8 @@ public interface PatchBlockModel extends BlockModel {
     /**
      * Add patch with given attributes.
      * 
-     * Definition is a 2D parallelogram surface, with origin <x0,y0,z0> within the block, and defined by two edge vectors -
-     * one with and end point of <xu,yu,zu>, and a second with an end point of <xv,yv,zv>.  The patch is
+     * Definition is a 2D parallelogram surface, with origin &lt;x0,y0,z0&gt; within the block, and defined by two edge vectors -
+     * one with and end point of &lt;xu,yu,zu&gt;, and a second with an end point of &lt;xv,yv,zv&gt;.  The patch is
      * defined within the unit vector range 0.0 to 1.0 (parallel to the U vecotr) and 0.0 to 1.0
      * (parallel to the V vector).
      * The surface can be visible via one side (SideVisible.TOP, SideVisible.BOTTOM) or both sides (SideVisible.BOTH).
@@ -61,8 +61,8 @@ public interface PatchBlockModel extends BlockModel {
     /**
      * Add patch with given attributes.
      * 
-     * Definition is a 2D parallelogram surface, with origin <x0,y0,z0> within the block, and defined by two edge vectors -
-     * one with and end point of <xu,yu,zu>, and a second with an end point of <xv,yv,zv>.  The patch is
+     * Definition is a 2D parallelogram surface, with origin &lt;x0,y0,z0&gt; within the block, and defined by two edge vectors -
+     * one with and end point of &lt;xu,yu,zu&gt;, and a second with an end point of &lt;xv,yv,zv&gt;.  The patch is
      * defined within the unit vector range 0.0 to 1.0 (parallel to the U vecotr) and 0.0 to 1.0
      * (parallel to the V vector).
      * The surface is visible on both sides

@@ -118,7 +118,7 @@ public abstract class CustomRenderer {
      * Get patch corresponding to side N (per MC side index: 0=bottom (y-), 1=top (y+), 2=z-, 3=z+, 4=x-, 5=x+)
      * @param rpf - patch factory
      * @param side - side number
-     * @paran setback - amount face is set back from block edge (0=on side, 0.5=at middle)
+     * @param setback - amount face is set back from block edge (0=on side, 0.5=at middle)
      * @param umin - texture horizontal minimum
      * @param umax - texture horizontal maximum
      * @param vmin - texture vertical minimum
