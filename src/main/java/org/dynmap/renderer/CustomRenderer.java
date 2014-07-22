@@ -79,6 +79,11 @@ public abstract class CustomRenderer {
     public abstract RenderPatch[] getRenderPatchList(MapDataContext mapDataCtx);
 
     private static final int[] default_patches = { 0, 0, 0, 0, 0, 0 };
+    
+    private static void addIfNonNull(List<RenderPatch> list, RenderPatch p) {
+        if (p != null)
+            list.add(p);
+    }
     /**
      *  Utility method: add simple box to give list
      * @param rpf - patch factory
@@ -97,22 +102,22 @@ public abstract class CustomRenderer {
         }
         /* Add bottom */
         if(patchids[0] >= 0)
-            list.add(rpf.getPatch(0, ymin, 0, 1, ymin, 0, 0, ymin, 1, xmin, xmax, zmin, zmax, SideVisible.TOP, patchids[0]));
+            addIfNonNull(list, rpf.getPatch(0, ymin, 0, 1, ymin, 0, 0, ymin, 1, xmin, xmax, zmin, zmax, SideVisible.TOP, patchids[0]));
         /* Add top */
         if(patchids[1] >= 0)
-            list.add(rpf.getPatch(0, ymax, 1, 1, ymax, 1, 0, ymax, 0, xmin, xmax, 1-zmax, 1-zmin, SideVisible.TOP, patchids[1]));
+            addIfNonNull(list, rpf.getPatch(0, ymax, 1, 1, ymax, 1, 0, ymax, 0, xmin, xmax, 1-zmax, 1-zmin, SideVisible.TOP, patchids[1]));
         /* Add minX side */
         if(patchids[2] >= 0)
-            list.add(rpf.getPatch(xmin, 0, 0, xmin, 0, 1, xmin, 1, 0, zmin, zmax, ymin, ymax, SideVisible.TOP, patchids[2]));
+            addIfNonNull(list, rpf.getPatch(xmin, 0, 0, xmin, 0, 1, xmin, 1, 0, zmin, zmax, ymin, ymax, SideVisible.TOP, patchids[2]));
         /* Add maxX side */
         if(patchids[3] >= 0)
-            list.add(rpf.getPatch(xmax, 0, 1, xmax, 0, 0, xmax, 1, 1, 1-zmax, 1-zmin, ymin, ymax, SideVisible.TOP, patchids[3]));
+            addIfNonNull(list, rpf.getPatch(xmax, 0, 1, xmax, 0, 0, xmax, 1, 1, 1-zmax, 1-zmin, ymin, ymax, SideVisible.TOP, patchids[3]));
         /* Add minZ side */
         if(patchids[4] >= 0)
-            list.add(rpf.getPatch(1, 0, zmin, 0, 0, zmin, 1, 1, zmin, 1-xmax, 1-xmin, ymin, ymax, SideVisible.TOP, patchids[4]));
+            addIfNonNull(list, rpf.getPatch(1, 0, zmin, 0, 0, zmin, 1, 1, zmin, 1-xmax, 1-xmin, ymin, ymax, SideVisible.TOP, patchids[4]));
         /* Add maxZ side */
         if(patchids[5] >= 0)
-            list.add(rpf.getPatch(0, 0, zmax, 1, 0, zmax, 0, 1, zmax, xmin, xmax, ymin, ymax, SideVisible.TOP, patchids[5]));
+            addIfNonNull(list, rpf.getPatch(0, 0, zmax, 1, 0, zmax, 0, 1, zmax, xmin, xmax, ymin, ymax, SideVisible.TOP, patchids[5]));
     }
     /**
      * Get patch corresponding to side N (per MC side index: 0=bottom (y-), 1=top (y+), 2=z-, 3=z+, 4=x-, 5=x+)
