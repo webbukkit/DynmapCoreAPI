@@ -6,8 +6,8 @@ public interface RenderPatchFactory {
     /**
      * Get/create patch with given attributes.
      * 
-     * Definition is a 2D parallelogram surface, with origin <x0,y0,z0> within the block, and defined by two edge vectors -
-     * one with and end point of <xu,yu,zu>, and a second with an end point of <xv,yv,zv>.  The patch is
+     * Definition is a 2D parallelogram surface, with origin &lt;x0,y0,z0&gt; within the block, and defined by two edge vectors -
+     * one with and end point of &lt;xu,yu,zu&gt;, and a second with an end point of &lt;xv,yv,zv&gt;.  The patch is
      * defined within the unit vector range umin to umax (parallel to the U vecotr) and vmin to vmax
      * (parallel to the V vector).
      * The surface can be visible via one side (SideVisible.TOP, SideVisible.BOTTOM) or both sides (SideVisible.BOTH).
@@ -29,12 +29,12 @@ public interface RenderPatchFactory {
      * @param sidevis - Controls which sides of the surface are visible (U cross V defines normal - TOP is from that side, BOTTOM is opposite side)
      * @param textureidx - texture index to be used for patch
      */
-    public RenderPatch getPatch(double x0, double y0, double z0, double xu, double yu, double zu, double xv, double yv, double zv, double unin, double umax, double vmin, double vmax, SideVisible sidevis, int textureids);
+    public RenderPatch getPatch(double x0, double y0, double z0, double xu, double yu, double zu, double xv, double yv, double zv, double umin, double umax, double vmin, double vmax, SideVisible sidevis, int textureidx);
     /**
      * Get/create patch with given attributes.
      * 
-     * Definition is a 2D triangular surface, with origin <x0,y0,z0> within the block, and defined by two edge vectors -
-     * one with and end point of <xu,yu,zu>, and a second with an end point of <xv,yv,zv>.  The visibility of
+     * Definition is a 2D triangular surface, with origin &lt;x0,y0,z0&gt; within the block, and defined by two edge vectors -
+     * one with and end point of &lt;xu,yu,zu&gt;, and a second with an end point of &lt;xv,yv,zv&gt;.  The visibility of
      * the patch is limited to the sum of the unit vector values for U and V via uplusvmax.
      * The surface can be visible via one side (SideVisible.TOP, SideVisible.BOTTOM) or both sides (SideVisible.BOTH).
      * The surface also needs to define the index of the texture to be used for shading the surface.
@@ -48,11 +48,11 @@ public interface RenderPatchFactory {
      * @param xv - X coordinate of end of V vector
      * @param yv - Y coordinate of end of V vector
      * @param zv - Z coordinate of end of V vector
-     * #param uplusvmax - limit on sum of unit vectors for U and V (use 1.0 for triangle extending from origin to U and to V)
+     * @param uplusvmax - limit on sum of unit vectors for U and V (use 1.0 for triangle extending from origin to U and to V)
      * @param sidevis - Controls which sides of the surface are visible (U cross V defines normal - TOP is from that side, BOTTOM is opposite side)
      * @param textureidx - texture index to be used for patch
      */
-    public RenderPatch getPatch(double x0, double y0, double z0, double xu, double yu, double zu, double xv, double yv, double zv, double uplusvmax, SideVisible sidevis, int textureids);
+    public RenderPatch getPatch(double x0, double y0, double z0, double xu, double yu, double zu, double xv, double yv, double zv, double uplusvmax, SideVisible sidevis, int textureidx);
     /**
      * Get/create patch with given attributes.
      * 
@@ -82,7 +82,7 @@ public interface RenderPatchFactory {
      * Get index of texture from texture map, using given key value
      * @param id - texture map ID
      * @param key - key of requested texture
-     * @returns index of texture, or -1 if not found
+     * @return index of texture, or -1 if not found
      */
     public int getTextureIndexFromMap(String id, int key);
     /**

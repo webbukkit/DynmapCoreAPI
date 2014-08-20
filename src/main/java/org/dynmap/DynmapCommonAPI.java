@@ -22,7 +22,7 @@ public interface DynmapCommonAPI {
     public boolean markerAPIInitialized();
     /**
      * Send generic message to all web users
-     * @param sender - label for sender of message ("Message from <plugin>:") - if null, no from notice
+     * @param sender - label for sender of message ("Message from &lt;plugin&gt;:") - if null, no from notice
      * @param msg - message to be sent
      */
     public boolean sendBroadcastToWeb(String sender, String msg);

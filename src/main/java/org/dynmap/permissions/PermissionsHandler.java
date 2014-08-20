@@ -50,7 +50,7 @@ public abstract class PermissionsHandler {
     /**
      * Test if given (potentially offline) user has the given permission
      * 
-     * @param username - user name
+     * @param player - user name
      * @param perm - permission
      * @return true if has permission, false if not
      */

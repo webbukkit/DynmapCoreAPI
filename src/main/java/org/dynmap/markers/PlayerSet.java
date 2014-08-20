@@ -5,7 +5,7 @@ import java.util.Set;
 /**
  * Interface defining a set of players that can be made visible on the map to other players with the needed permissions.
  * The set can have symmetric access - meaning that any player in the set can see the other players in the set.
- * In any case, players with the permission node 'dynmap.playerset.<set-id>' can see players in the set.
+ * In any case, players with the permission node 'dynmap.playerset.&lt;set-id&gt;' can see players in the set.
  */
 public interface PlayerSet {
     /**

@@ -16,7 +16,6 @@ public interface GenericMarker {
     public MarkerSet getMarkerSet();
     /**
      * Set the marker set for the marker
-     * @return marker set
      */
     public void setMarkerSet(MarkerSet newset);
     /**
@@ -47,8 +46,8 @@ public interface GenericMarker {
     public void setLabel(String lbl);
     /**
      * Update the marker's label and markup flag
-     * @param label - label string
-     * @param markup - if true, label is processed as HTML (innerHTML for <span> used for label); false implies plaintext
+     * @param lbl - label string
+     * @param markup - if true, label is processed as HTML (innerHTML for &lt;span&gt; used for label); false implies plaintext
      */
     public void setLabel(String lbl, boolean markup);
     /**
@@ -57,22 +56,22 @@ public interface GenericMarker {
     public boolean isLabelMarkup();
     /**
      * Get minimum zoom level for marker to be visible (overrides minzoom for marker set, if any)
-     * @return -1 if no minimum, >0 = lowest level of zoom marker is shown
+     * @return -1 if no minimum, &gt;0 = lowest level of zoom marker is shown
      */
     public int getMinZoom();
     /**
      * Set minimum zoom level for marker to be visible (overrides minzoom for marker set, if any)
-     * @param zoom : -1 if no minimum, >0 = lowest level of zoom marker is shown
+     * @param zoom : -1 if no minimum, &gt;0 = lowest level of zoom marker is shown
      */
     public void setMinZoom(int zoom);
     /**
      * Get maximum zoom level for marker to be visible (overrides maxzoom for marker set, if any)
-     * @return -1 if no maximum, >0 = highest level of zoom marker is shown
+     * @return -1 if no maximum, &gt;0 = highest level of zoom marker is shown
      */
     public int getMaxZoom();
     /**
      * Set maximum zoom level for marker to be visible (overrides maxzoom for marker set, if any)
-     * @param zoom : -1 if no maximum, >0 = highest level of zoom marker is shown
+     * @param zoom : -1 if no maximum, &gt;0 = highest level of zoom marker is shown
      */
     public void setMaxZoom(int zoom);
 }

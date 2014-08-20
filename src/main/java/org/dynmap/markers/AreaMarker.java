@@ -38,7 +38,7 @@ public interface AreaMarker extends MarkerDescription {
     public double getCornerZ(int n);
     /**
      * Set coordinates of corner N
-     * @param n - index of corner: append new corner if >= corner count, else replace existing
+     * @param n - index of corner: append new corner if &gt;= corner count, else replace existing
      * @param x - x coordinate
      * @param z - z coordinate
      */
