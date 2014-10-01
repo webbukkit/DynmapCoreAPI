@@ -36,4 +36,14 @@ public interface CopyBlockTextureRecord {
      * @return souce meta ID
      */
     public int getSourceMeta();
+    /**
+     * Set transparency mode for block
+     * @param mode - transparency mode
+     */
+    public void setTransparencyMode(TransparencyMode mode);
+    /**
+     * Get transparency mode for block
+     * @return transparency mode
+     */
+    public TransparencyMode getTransparencyMode();
 }
