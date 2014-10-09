@@ -184,4 +184,16 @@ public interface BlockTextureRecord {
      * @return texture index
      */
     public int getPatchTextureIndex(int patchIndex);
+    
+    /**
+     * Set block color map
+     * @param txtFileID - texture file ID
+     */
+    public void setBlockColorMapTexture(String txtFileID);
+    /**
+     * Set block color map
+     * @param txtFile - texture file
+     */
+    public void setBlockColorMapTexture(TextureFile txtFile);
+
 }
