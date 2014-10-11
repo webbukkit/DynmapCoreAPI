@@ -100,6 +100,13 @@ public interface ModTextureDefinition {
      * @return CustomTextureFile associated with resource: use methods on this to define the custom patches within the file
      */
     public CustomTextureFile registerCustomTextureFile(String id, String filename, int xcount, int ycount);
+    /**
+     * Register texture file with BIOME layout
+     * @param id - texture ID
+     * @param filename - texture file name (including .png)
+     * @return TextureFile associated with resource
+     */
+    public BiomeTextureFile registerBiomeTextureFile(String id, String filename);
     
     /**
      * Add block texture record : default assumes all metadata values are matching
