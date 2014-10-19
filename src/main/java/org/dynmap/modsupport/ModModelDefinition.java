@@ -64,6 +64,12 @@ public interface ModModelDefinition {
      */
     public BoxBlockModel addBoxModel(int blockid);
     /**
+     * Add door model
+     * @param blockid - block ID
+     * @return block model record
+     */
+    public DoorBlockModel addDoorModel(int blockid);
+    /**
      * Add patch box model : default assumes all metadata values are matching
      * @param blockid - block ID
      * @return block model record
