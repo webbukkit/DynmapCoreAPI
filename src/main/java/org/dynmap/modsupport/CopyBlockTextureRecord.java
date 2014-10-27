@@ -17,6 +17,16 @@ public interface CopyBlockTextureRecord {
      */
     public int[] getBlockIDs();
     /**
+     * Add block name to mapping (in case multiple block names use same model)
+     * @param blockname - block name
+     */
+    public void addBlockName(String blockname);
+    /**
+     * Get block names
+     * @return configured names
+     */
+    public String[] getBlockNames();
+    /**
      * Set metadata value : default is for all values (data=*).  Setting other values will match only the values that are set
      * @param data - value to match (-1 = all, 0-15 is meta value to match)
      */
