@@ -93,7 +93,6 @@ public abstract class DynmapCommonAPIListener {
             for (DynmapCommonAPIListener l : listeners) {
                 noCancel = l.webChatEvent(source, name, message) && noCancel;
             }
-            dynmapapi = null;
         }
         return noCancel;
     }
