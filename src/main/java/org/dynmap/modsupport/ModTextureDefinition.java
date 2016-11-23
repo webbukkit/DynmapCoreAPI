@@ -81,6 +81,13 @@ public interface ModTextureDefinition {
      */
     public SkinTextureFile registerSkinTextureFile(String id, String filename);
     /**
+     * Register texture file with SHULKER layout (standard shulker and shulker box texture)
+     * @param id - texture ID
+     * @param filename - texture file name (including .png)
+     * @return TextureFile associated with resource
+     */
+    public ShulkerTextureFile registerShulkerTextureFile(String id, String filename);
+    /**
      * Register texture file with GRID layout (array of xcount x ycount square textures)
      * @param id - texture ID
      * @param filename - texture file name (including .png)
