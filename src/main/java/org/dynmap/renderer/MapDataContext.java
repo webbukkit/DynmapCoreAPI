@@ -15,11 +15,7 @@ public interface MapDataContext {
     /**
      * Get block type ID of requested block
      */
-    public int getBlockTypeID();
-    /**
-     * Get block data of the requested block
-     */
-    public int getBlockData();
+    public DynmapBlockState getBlockType();
     /**
      * Get Tile Entity field value for requested block
      * @param fieldId - field ID
@@ -32,14 +28,7 @@ public interface MapDataContext {
      * @param yoff - offset on Y axis
      * @param zoff - offset on Z axis
      */
-    public int getBlockTypeIDAt(int xoff, int yoff, int zoff);
-    /**
-     * Get block data of block at relative offset from requested block
-     * @param xoff - offset on X axis
-     * @param yoff - offset on Y axis
-     * @param zoff - offset on Z axis
-     */
-    public int getBlockDataAt(int xoff, int yoff, int zoff);
+    public DynmapBlockState getBlockTypeAt(int xoff, int yoff, int zoff);
     /**
      * Get Tile Entity field value of block at relative offset from requested block
      * @param fieldId - field ID
