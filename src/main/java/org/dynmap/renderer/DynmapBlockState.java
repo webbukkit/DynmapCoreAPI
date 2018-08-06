@@ -94,12 +94,14 @@ public class DynmapBlockState {
         if (base != this) { // If we aren't base block state
             if (base.states == null) {  // If no state list yet
                 base.states = new DynmapBlockState[stateidx+1]; // Enough for us to fit
+                Arrays.fill(base.states, AIR);
                 base.states[0] = base;  // Add base state as index 0
             }
             else if (base.states.length <= stateidx) {  // Not enough room
                 // Resize it
                 DynmapBlockState[] newstates = new DynmapBlockState[stateidx+1];
                 System.arraycopy(base.states, 0, newstates, 0, base.states.length);
+                Arrays.fill(newstates, base.states.length, stateidx+1, AIR);
                 base.states = newstates;
             }
             base.states[stateidx] = this;
@@ -179,14 +181,14 @@ public class DynmapBlockState {
      * @return true if not air, false if air
      */
     public final boolean isNotAir() {
-        return (matchflags & MATCH_AIR) != 0;
+        return (matchflags & MATCH_AIR) == 0;
     }
     /**
      * Return true if block is air
      * @return true if air, false if air
      */
     public final boolean isAir() {
-        return (matchflags & MATCH_AIR) == 0;
+        return (matchflags & MATCH_AIR) != 0;
     }
     /**
      * Return number of states under base state
