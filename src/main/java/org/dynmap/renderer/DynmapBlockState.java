@@ -129,7 +129,7 @@ public class DynmapBlockState {
      * @param idx - index number
      * @return new state, or AIR if invalid index
      */
-    public DynmapBlockState getStateByIndex(int idx) {
+    public final DynmapBlockState getStateByIndex(int idx) {
         if (baseState.states == null) {
             return (idx == 0) ? this : null;
         }
@@ -140,7 +140,7 @@ public class DynmapBlockState {
      * @param name - block name (modid:name)
      * @return base block state, or AIR if not found
      */
-    public static DynmapBlockState getBaseStateByName(String name) {
+    public static final DynmapBlockState getBaseStateByName(String name) {
         DynmapBlockState blk = blocksByName.get(name);
         if ((blk == null) && (name.indexOf(':') == -1)) {
             blk = blocksByName.get("minecraft:" + name);
@@ -153,7 +153,7 @@ public class DynmapBlockState {
      * @param idx - state index
      * @return base block state, or AIR if not found
      */
-    public static DynmapBlockState getStateByNameAndIndex(String name, int idx) {
+    public static final DynmapBlockState getStateByNameAndIndex(String name, int idx) {
         DynmapBlockState blk = getBaseStateByName(name);
         if (blk != null) {
             blk = blk.getState(idx);
@@ -165,7 +165,7 @@ public class DynmapBlockState {
      * @param gidx - global index
      * @return block state, or AIR if not found
      */
-    public static DynmapBlockState getStateByGlobalIndex(int gidx) {
+    public static final DynmapBlockState getStateByGlobalIndex(int gidx) {
         DynmapBlockState bs = blocksByIndex.get(gidx);
         return (bs != null) ? bs : AIR;
     }
@@ -173,7 +173,7 @@ public class DynmapBlockState {
      * Get current top of range of block state global indexes, plus 1
      * @return length of global block state index range (N, for 0-(N-1))
      */
-    public static int getGlobalIndexMax() {
+    public static final int getGlobalIndexMax() {
         return nextGlobalStateIndex;
     }
     /**
@@ -218,7 +218,7 @@ public class DynmapBlockState {
     /**
      * Test if block is log block
      */
-    public boolean isLog() {
+    public final boolean isLog() {
         return (matchflags & MATCH_LOG) != 0;
     }
     /**
@@ -238,7 +238,7 @@ public class DynmapBlockState {
     /**
      * Test if block is water block
      */
-    public boolean isWater() {
+    public final boolean isWater() {
         return (matchflags & MATCH_WATER) != 0;
     }
     /**
@@ -264,13 +264,13 @@ public class DynmapBlockState {
     /**
      * Test if block is snow block
      */
-    public boolean isSnow() {
+    public final boolean isSnow() {
         return (matchflags & MATCH_SNOW) != 0;
     }
     /**
      * Test if block is grass block
      */
-    public boolean isGrass() {
+    public final boolean isGrass() {
         return (matchflags & MATCH_GRASS) != 0;
     }
     /**
