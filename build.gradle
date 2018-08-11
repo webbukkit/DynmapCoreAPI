@@ -15,3 +15,9 @@ repositories {
         
      maven { url "http://repo.maven.apache.org/maven2" }
 }
+
+jar {
+	archiveName = "${project.name}-${project.version}.jar"
+    destinationDir = file 'target'
+}
+	
