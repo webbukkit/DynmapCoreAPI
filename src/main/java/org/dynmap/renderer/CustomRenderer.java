@@ -23,12 +23,12 @@ public abstract class CustomRenderer {
      * If overridden, super.initializeRenderer() should be called and cause exit if false is returned
      *
      * @param rpf - render patch factory (used for allocating patches)
-     * @param blkid - block type ID
+     * @param blkname - block name
      * @param blockdatamask - block data mask (bit N=1 if block data value N is to be handled by renderer)
      * @param custparm - parameter strings for custom renderer - renderer specific
      * @return true if initialized successfully, false if not
      */
-    public boolean initializeRenderer(RenderPatchFactory rpf, int blkid, int blockdatamask, Map<String,String> custparm) {
+    public boolean initializeRenderer(RenderPatchFactory rpf, String blkname, int blockdatamask, Map<String,String> custparm) {
         return true;
     }
     /**
